@@ -1,11 +1,7 @@
 import React from "react";
 
 function Signup() {
-  return (
-    <div>
-      <LogSignBar />
-    </div>
-  );
+  return <div>Signup</div>;
 }
 
 export default Signup;
