@@ -1,8 +1,11 @@
-import React from 'react'
+import React from "react";
+import LogSignBar from "../components/LogSignBar";
 
 export const Login = () => {
   return (
-    <div>Login</div>
-  )
-}
-export default Login
+    <div>
+      <LogSignBar />
+    </div>
+  );
+};
+export default Login;
