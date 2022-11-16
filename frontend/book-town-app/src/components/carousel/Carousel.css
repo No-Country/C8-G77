@@ -1,0 +1,34 @@
+.slick-slide > div {
+  margin: 0 3px;
+}
+.slick-list {
+  margin: 0 -10px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: rgb(145, 130, 130);
+}
+
+
+.slick-prev:before:hover{
+  opacity:0.75;
+}
+
+.slick-next:before:hover{
+  opacity: 0.75;
+}
+
+@media screen and (min-width: 481px) and (max-width: 600px) { 
+  .container{
+    width: 260px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px){
+  .container{
+    width: 130px;
+    height: 300px;
+  }
+}

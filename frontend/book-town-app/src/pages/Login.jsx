@@ -1,11 +1,15 @@
 import React from "react";
+import Carousel from "../components/carousel/Carousel";
 import LogSignBar from "../components/LogSignBar";
 
 export const Login = () => {
   return (
-    <div>
+    <>
       <LogSignBar />
-    </div>
+      <div className="bg-gray-300">
+        <Carousel />
+      </div>
+    </>
   );
 };
 export default Login;
