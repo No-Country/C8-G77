@@ -14,7 +14,7 @@ function FormLogin() {
             Email
           </label>
           <input
-            className="w-full rounded-xl p-3 mt-1 bg-white outline-violet-300"
+            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300"
             placeholder="Enter your email"
             type="email"
             id="email"
@@ -26,7 +26,7 @@ function FormLogin() {
             Password
           </label>
           <input
-            className="w-full rounded-xl p-3 mt-1 bg-white outline-violet-300"
+            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300"
             placeholder="Enter your password"
             type="password"
             id="password"

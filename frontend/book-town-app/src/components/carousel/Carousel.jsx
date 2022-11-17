@@ -8,7 +8,6 @@ import "./Carousel.css";
 function Carousel() {
   const settings = {
     dots: true,
-    infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
@@ -48,13 +47,19 @@ function Carousel() {
   return (
     <div className="container w-[500px] mx-auto ">
       <Slider {...settings}>
-        {initalState.map((item) => (
-          <div className="card border border-white  rounded overflow-hidden h-[200px] shadow-md shadow-gray-600 ">
-            <div className="h-full">
-              <img className="w-full h-full" src={item.img} alt={item.title} />
+        {React.Children.toArray(
+          initalState.map((item) => (
+            <div className="card border border-white  rounded overflow-hidden h-[200px] shadow-md shadow-gray-600 ">
+              <div className="h-full">
+                <img
+                  className="w-full h-full"
+                  src={item.img}
+                  alt={item.title}
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </Slider>
     </div>
   );
