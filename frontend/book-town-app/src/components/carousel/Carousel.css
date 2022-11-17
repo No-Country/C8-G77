@@ -1,13 +1,17 @@
+/* images gap */
 .slick-slide > div {
-  margin: 0 3px;
+  margin: 0 5px;
 }
 .slick-list {
   margin: 0 -10px;
 }
 
+/* arrow color */
+
 .slick-prev:before,
 .slick-next:before {
   color: rgb(145, 130, 130);
+  display: none;
 }
 
 
@@ -19,6 +23,7 @@
   opacity: 0.75;
 }
 
+/* querys carousel mobile*/
 @media screen and (min-width: 481px) and (max-width: 600px) { 
   .container{
     width: 260px;
@@ -31,4 +36,9 @@
     width: 130px;
     height: 300px;
   }
+  .slick-prev:before,
+  .slick-next:before {
+  color: rgb(145, 130, 130);
+  display: block;
+}
 }

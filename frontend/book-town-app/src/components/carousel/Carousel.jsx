@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { initalState } from "../../data";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import "./Carousel.css";
 
 function Carousel() {
@@ -47,15 +46,12 @@ function Carousel() {
   };
 
   return (
-    <div className="container w-[500px] mx-auto">
+    <div className="container w-[500px] mx-auto ">
       <Slider {...settings}>
         {initalState.map((item) => (
-          <div className="card border border-white bg-black rounded overflow-hidden h-[200px]">
+          <div className="card border border-white  rounded overflow-hidden h-[200px] shadow-md shadow-gray-600 ">
             <div className="h-full">
               <img className="w-full h-full" src={item.img} alt={item.title} />
-              <h2 className="text-base text-white my-2 text-center">
-                {item.title}
-              </h2>
             </div>
           </div>
         ))}
