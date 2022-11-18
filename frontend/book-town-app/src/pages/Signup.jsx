@@ -15,13 +15,15 @@ function Signup() {
                 ❝
               </span>{" "}
               Your favorite <br /> under the same roof{" "}
-              <span className=" text-violet-500 text-3xl">❞</span>
+              <span className="text-violet-500 text-xl md:text-2xl lg:text-3xl">
+                ❞
+              </span>
             </h1>
             <Carousel />
           </div>
         </div>
 
-        <div className="w-full sm:flex sm:justify-center sm:py-12 sm:bg-blue-600 lg:w-2/5 lg:px-4">
+        <div className="w-full sm:flex sm:justify-center sm:py-12 sm:bg-gradient-to-r from-blue-800 via-cyan-500 to-violet-700 lg:w-2/5 lg:px-4">
           <FormSignup />
         </div>
       </div>
