@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function FormLogin() {
   return (
-    <form className=" bg-gray-900 px-12 py-10 sm:px-16 max-sm:rounded-none rounded-3xl border-2 shadow-lg shadow-gray-900 lg:px-8">
+    <form className=" bg-gray-900 px-12 pt-4 pb-6 sm:px-16 max-sm:rounded-none rounded-3xl border-2 shadow-lg shadow-gray-900 lg:px-8">
       <h2 className="text-3xl font-semibold text-center text-white">Log in</h2>
       <p className="font-medium text-lg text-gray-200 mt-4 text-center">
         Welcome back! Please enter your details.
@@ -45,11 +45,11 @@ function FormLogin() {
           </div>
         </div>
 
-        <div className="pt-8 flex-col text-center">
+        <div className="pt-2 flex-col text-center">
           <button className="w-2/3 bg-orange-600 focus:ring focus:ring-orange-300 text-white text-lg font-bold py-3 rounded-xl active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out">
             Accept
           </button>
-          <p className="text-gray-200 pt-4 text-sm">
+          <p className="text-gray-200 pt-2 text-sm">
             Do not you have an account yet? <br />
             <Link to="/Signup">
               <span className="text-violet-300 underline">Sign up!</span>
