@@ -2,8 +2,11 @@ const express = require('express')
 const db = require('./utils/database')
 const initModels = require('./models/initModels')
 const { port } = require('./config')
+const useRouter = require('./users/users.router')
+const authRouter = require('./auth/auth.router')
 
 const app = express()
+app.use(express.json())
 
 db.authenticate()
     .then(() => console.log('DB autentication successfully'))
@@ -15,10 +18,14 @@ db.sync()
 
 initModels()
 
-app.use(express.json())
-
 app.get('/', (req, res) => {
-    res.status(200).json({ message: 'start server' })
+    res.status(200).json({
+        message: 'OK',
+        users: `localhost:${port}/api/v1/users`
+    })
 })
+
+app.use('/api/v1/users', useRouter)
+app.use('/api/v1/auth', authRouter)
 
 app.listen(port, () => console.log('Success 😺😺😺 ' + port)) 
