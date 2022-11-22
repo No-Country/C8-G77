@@ -1,5 +1,4 @@
 const express = require('express')
-
 const db = require('./utils/database')
 const initModels = require('./models/initModels')
 const { port } = require('./config')

@@ -41,7 +41,6 @@ const Users = db.define('users', {
     },
     genre: {
         type: DataTypes.STRING,
-        allowNull: false
     },
     bookPreference: {
         type: DataTypes.STRING,
