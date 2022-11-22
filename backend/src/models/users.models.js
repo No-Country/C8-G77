@@ -8,12 +8,13 @@ const Users = db.define('users', {
         type: DataTypes.UUID,
         allowNull: false
     },
-    name: {
-        type: DataTypes.STRING(100),
-        allowNull: false
+    firstName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        field: 'first_name'
     },
     lastName: {
-        type: DataTypes.STRING(100),
+        type: DataTypes.STRING,
         allowNull: false,
         field: 'last_name'
     },
@@ -22,28 +23,56 @@ const Users = db.define('users', {
         allowNull: false
     },
     email: {
-        type: DataTypes.STRING(150),
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+            isEmail: true
+        }
     },
     birthday: {
         type: DataTypes.DATEONLY,
         allowNull: false
     },
+    phone: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
     genre: {
-        type: DataTypes.STRING(10),
+        type: DataTypes.STRING,
         allowNull: false
     },
     bookPreference: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING,
         allowNull: false
     },
     username: {
-        type: DataTypes.STRING(60),
+        type: DataTypes.STRING,
         allowNull: false
     },
     password: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING,
         allowNull: false
+    },
+    role: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: 'normal'
+    },
+    country: {
+        type: DataTypes.STRING,
+    },
+    status: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: 'active'
+    },
+    isVerified: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        field: 'is_verified',
+        defaultValue: false
     }
 })
 

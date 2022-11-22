@@ -2,6 +2,7 @@ const express = require('express')
 
 const db = require('./utils/database')
 const initModels = require('./models/initModels')
+const { port } = require('./config')
 
 const app = express()
 
@@ -21,6 +22,4 @@ app.get('/', (req, res) => {
     res.status(200).json({ message: 'start server' })
 })
 
-const PORT = process.env.PORT || 5000
-
-app.listen(PORT, () => console.log('Success 😺😺😺 ' + PORT)) 
+app.listen(port, () => console.log('Success 😺😺😺 ' + port)) 
