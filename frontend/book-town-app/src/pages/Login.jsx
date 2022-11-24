@@ -1,12 +1,10 @@
 import React from "react";
 import Carousel from "../components/carousel/Carousel";
 import FormLogin from "../components/form/FormLogin";
-import LogSignBar from "../components/login-signup/LogSignBar";
 
 export const Login = () => {
   return (
     <>
-      <LogSignBar />
       <div className="flex-col lg:flex lg:flex-row h-screen">
         <div className="w-full lg:w-3/5 bg-gray-200 justify-center items-center">
           <div className="lg:w-8/10 pt-10 pb-6 sm:pb-12">
