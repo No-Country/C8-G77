@@ -44,7 +44,8 @@ const Users = db.define('users', {
     },
     bookPreference: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        field: 'book_preference'
     },
     password: {
         type: DataTypes.STRING,
