@@ -12,7 +12,7 @@ export const Login = () => {
               <span className="text-violet-500 text-xl md:text-2xl lg:text-3xl">
                 ❝
               </span>{" "}
-              Your favorite <br /> under the same roof{" "}
+              Your favourites <br /> under the same roof{" "}
               <span className="text-violet-500 text-xl md:text-2xl lg:text-3xl">
                 ❞
               </span>
