@@ -5,18 +5,10 @@ import FormLogin from "../components/form/FormLogin";
 export const Login = () => {
   return (
     <>
-<<<<<<< HEAD
-      <LogSignBar />
-      <div className="flex-col lg:flex lg:flex-row xl:flex xl:justify-center xl:items-center">
-        <div className="w-full lg:w-3/5 bg-gray-200 justify-center items-center xl:h-screen xl:flex xl:justify-center xl:items-center ">
-          <div className="lg:w-8/10 pt-10 xl:pt-0 pb-6 sm:pb-12">
-            <h1 className="pt-10 xl:pt-2 xl:pb-6 text-3xl xl:text-4xl 2xl:text-5xl lg:text-4xl font-bold text-center mb-8">
-=======
       <div className="flex-col lg:flex lg:flex-row h-screen">
         <div className="w-full lg:w-3/5 bg-gray-200 justify-center items-center">
           <div className="lg:w-8/10 pt-10 pb-6 sm:pb-12">
             <h1 className="pt-10 text-3xl lg:text-4xl font-bold text-center mb-8">
->>>>>>> cesar_branch
               <span className="text-violet-500 text-xl md:text-2xl lg:text-3xl">
                 ❝
               </span>{" "}
