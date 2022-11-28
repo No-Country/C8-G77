@@ -32,12 +32,12 @@ function NavBar() {
           <div className="md:p-0 lg:p-0 text-sm">
             <div
               onClick={() => setOpen(!open)}
-              className="text-3xl absolute left-6 top-36 cursor-pointer md:hidden lg:hidden text-white"
+              className="text-3xl absolute left-6 top-36 cursor-pointer md:hidden lg:hidden text-white "
             >
               {open ? <TfiClose /> : <TfiMenu />}
             </div>
             <ul
-              className={`max-md:bg-gradient-to-r from-violet-900 via-indigo-900 to-gray-900  pb-2 md:flex md:items-center md:pb-0 lg:pb-0 absolute md:static lg:static z-[10]  md:z-auto lg:z-auto  left-0 w-full md:w-auto lg:w-auto md:pl-0 lg:pl-0 pl-5 transition-all duration-500 ease-in text-center max-md:text-base ${
+              className={`max-md:bg-gradient-to-r from-violet-900 via-indigo-900 to-gray-900 pb-2 md:flex md:items-center md:pb-0 lg:pb-0 absolute md:static lg:static z-[10]  md:z-auto lg:z-auto  left-0 w-full md:w-auto lg:w-auto md:pl-0 lg:pl-0 pl-5 text-center max-md:text-base ${
                 open ? "top-50" : "top-[-420px]"
               }`}
             >
