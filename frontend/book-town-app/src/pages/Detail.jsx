@@ -1,10 +1,8 @@
 import React from "react";
-import LogSignBar from "../components/login-signup/LogSignBar";
 
 export const Detail = () => {
   return (
     <>
-      <LogSignBar />
       <body>
       <div className="bg-lime-600 bg-cover w-full h-80">
         <section className="w-11/12 md:w-4/5 h-screen m-auto flex items-center">
