@@ -7,7 +7,7 @@ import Account from "./pages/Account";
 import History from "./pages/History";
 import NavBar from "./components/Navbar/NavBar";
 import Cart from "./pages/Cart";
-
+import Footer from "./pages/Footer";
 function App() {
   return (
     <>
@@ -20,6 +20,7 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/history" element={<History />} />
         <Route path="/cart" element={<Cart />} />
+        
       </Routes>
     </>
   );
