@@ -1,99 +1,72 @@
 import React from "react";
+import { AiTwotoneStar } from "react-icons/ai";
+import CarouselDetail from "../components/carousel/CarouselDetail";
 
 export const Detail = () => {
   return (
     <>
-      <body>
-      <div className="bg-lime-600 bg-cover w-full h-80">
-        <section className="w-11/12 md:w-4/5 h-screen m-auto flex items-center">
-          
-            <div className="w-full flex flex-col md:flex-row md:justify-between md:space-x-10 items-center">
-             <div className="relative">
-               <img id="image" className=" static w-full h-full" src="https://www.lanormal.com.ar/media/libros/bd4be862594dc7fdb53166047e87f2af.jpg" alt="Harry Potter"></img>
-               <div className="arrows w-full absolute insert-y-1/2 flex justify-between px-3">
-                 <button id="prev"><i className="fa-solid fa-chevron-left"></i> </button>
-                 <button id="next"><i className="fa-solid fa-chevron-right"></i> </button>
-               </div>
-             </div>
-             <div className="space-y-5 p-5">
-               <h4 className="text-4xl font-semibold">Harry El Sucio Potter</h4>
-               <h1 className="text-3xl font-bold"> <h1 className="text-xl font-bold"> Section:</h1> Magic Books</h1>
-               <h2 className="text-xl font-bold">$430.00</h2>
-               <p className="text-sm">( Descripcion)
-               </p>
-               <p className="text-sm"> El primer libro de la saga </p>
-               <div className="space-y-5">
-                 <input className="w-24 h-8 px-3 border border-gray-600 outline-0" type="number" id="amount" />
-                 <div>
-                   <p>Disponibilidad</p> <span class="text-lime-600/100 text-2xl">Hay stock</span>
-
-                 </div>
-               </div>
-               <div className=" space-x-5 flex items-center">
-                 <button className="flex-items-center space-x-2 border border-rose-400-px-5 py-2 rounded-md
-                 hover:bg-rose-400 hover:text-white">
-                   <i className="fa-regular fa-heart text-xl"></i>
-                   <span>Favorites</span>
-                   <i class="fa-regular fa-heart"></i>
-                 </button>
-                 <button className="bg-rose-400 px py-2 rounded-md text-white hover:hg-white
-                 hover:border hover:border-gray-600 hover:text-black">
-                   <i class="fa-solid fa-cart-shopping"></i>
-                   <span>Add To Cart</span>
-                 </button>
-               </div>
-             </div>
-           </div>
-               
-        </section>
+      <div className="flex flex-col">
+        <div className="w-full bg-gradient-to-r from-beigeOscuro to-beige h-full md:flex md:flex-row justify-center items-center">
+          <div className="my-14 mx-auto w-48 md:my-10 md:w-1/2">
+            <h1 className="text-center font-bold text-3xl xl:text-4xl pb-2">
+              Harry Potter
+            </h1>
+            <h2 className="text-center text-md xl:text-xl text-vino pb-5 font-semibold">
+              J.K. Rowling
+            </h2>
+            <img
+              className="w-[150px] h-[240px] sm:w-[200px] sm:h-[300px] mx-auto md:w-[226px] md:h-[330px] lg:w-[230px] lg:h-[340px] xl:w-[310px] xl:h-[450px] md:mx-auto md:shadow-xl shadow-bordo"
+              src="https://www.lanormal.com.ar/media/libros/bd4be862594dc7fdb53166047e87f2af.jpg"
+              alt="book"
+            />
+            <p className="text-vino flex justify-center text-sm font-bold pt-4 md:text-xl md:hidden">
+              4.5 / 5
+              <span>
+                <AiTwotoneStar className="w-4 h-5 ml-1 text-vino md:w-5 md:h-7" />
+              </span>
+            </p>
+          </div>
+          <div className="md:w-1/2 md:flex md:flex-col">
+            <div className="w-4/5 mx-auto md:w-10/12 md:px-2">
+              <p className="hidden sm:hidden md:flex md:justify-center lg:flex lg:justify-center text-vino md:text-xl md:font-bold md:pt-4  md:py-16">
+                4.5 / 5
+                <span>
+                  <AiTwotoneStar className="w-4 h-5 ml-1 text-vino md:w-5 md:h-7" />
+                </span>
+              </p>
+              <p className="text-center text-lg lg:text-xl xl:text-2xl">
+                <span className="text-rosaPalido text-xl md:text-2xl lg:text-3xl">
+                  ❝
+                </span>{" "}
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam
+                dolorum maiores aliquid placeat sint magnam veritatis tempore
+                facere quas aperiam porro
+                <span className="text-rosaPalido text-xl md:text-2xl lg:text-3xl">
+                  ❞
+                </span>
+              </p>
+            </div>
+            <div className="text-center py-10 md:mt-2">
+              <button className="bg-indigo-700 text-white text-md font-bold p-2 rounded-lg">
+                Add to cart
+                <span className="ml-2 text-white border-solid border-l py-1"></span>
+                <span className="ml-2 text-white font-normal ">$100</span>
+              </button>
+            </div>
+          </div>
         </div>
-        <section className="up-sells upsells products">
-          <ul className="container mx-auto">
-            <div>
-                <h2 class="text-3xl font-bold mb-3">
-                También te recomendamos
-                </h2>
-            </div>
-            <div className="grid grid-cols-4 gap-6 ">
-              <div>
-               <img id="image" className="flex justify-center p-6 text-6xl bg-gray-100 border-2 border-gray-300 rounded-xl" src="https://www.lanormal.com.ar/media/libros/bd4be862594dc7fdb53166047e87f2af.jpg" alt="Harry Potter"></img>
-              </div> 
-              <div>
-               <img class="flex justify-center p-6 text-6xl bg-gray-100 border-2 border-gray-300 rounded-xl" src="https://cdn.culturagenial.com/es/imagenes/bajo-la-misma-estrella-libro-cke.jpg" alt="Bajo la Misma Estrella"></img>
-              </div>
-              <div>
-              <img className="flex justify-center p-6 text-6xl bg-gray-100 border-2 border-gray-300 rounded-xl" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/sci-fi-book-cover-template-a1ec26573b7a71617c38ffc6e356eef9_screen.jpg?ts=1636980113" alt="The Arrivals"></img>
-
-              </div>
-              <div>
-              <img className="flex justify-center p-6 text-6xl bg-gray-100 border-2 border-gray-300 rounded-xl" src="https://images.cdn2.buscalibre.com/fit-in/360x360/4c/a1/4ca1e3b323be5dc522130e0bb8da7545.jpg" alt="The Hunger Games"></img>
-
-              </div>
-            </div>
-            
-          </ul>
-          <ul className="container mx-auto mt-40 my-70">
-            <div className="grid grid-cols-4 gap-4 ">
-              <div>
-               <img id="image" className="flex justify-center p-6 text-6xl bg-gray-100 border-2 border-gray-300 rounded-xl" src="https://www.lanormal.com.ar/media/libros/bd4be862594dc7fdb53166047e87f2af.jpg" alt="Harry Potter"></img>
-              </div> 
-              <div>
-               <img class="flex justify-center p-6 text-6xl bg-gray-100 border-2 border-gray-300 rounded-xl" src="https://cdn.culturagenial.com/es/imagenes/bajo-la-misma-estrella-libro-cke.jpg" alt="Bajo la Misma Estrella"></img>
-              </div>
-              <div>
-              <img className="flex justify-center p-6 text-6xl bg-gray-100 border-2 border-gray-300 rounded-xl" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/sci-fi-book-cover-template-a1ec26573b7a71617c38ffc6e356eef9_screen.jpg?ts=1636980113" alt="The Arrivals"></img>
-
-              </div>
-              <div>
-              <img className="flex justify-center p-6 text-6xl bg-gray-100 border-2 border-gray-300 rounded-xl" src="https://images.cdn2.buscalibre.com/fit-in/360x360/4c/a1/4ca1e3b323be5dc522130e0bb8da7545.jpg" alt="The Hunger Games"></img>
-
-              </div>
-            </div>
-            
-          </ul>
-        </section >
-      </body>
-      </>
+      </div>
+      <div className="bg-gradient-to-r from-salmon to-bordo py-12">
+        <h1 className="pb-6  text-2xl lg:text-3xl xl:text-3xl font-bold text-center text-gray-100">
+          Related
+        </h1>
+        <div className="w-full flex justify-center">
+          <div className="w-full">
+            <CarouselDetail />
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 export default Detail;

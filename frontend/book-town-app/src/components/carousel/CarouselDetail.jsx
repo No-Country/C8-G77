@@ -3,13 +3,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { initalState } from "../../data";
-import "./Carousel.css";
+import "./CarouselDetail.css";
 
-function Carousel() {
+function CarouselDetail() {
   const settings = {
     dots: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 4,
     infinite: true,
     initialSlide: 0,
@@ -26,7 +26,7 @@ function Carousel() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 2,
           initialSlide: 2,
           infinite: true,
@@ -35,9 +35,9 @@ function Carousel() {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: false,
           dots: true,
         },
       },
@@ -45,12 +45,12 @@ function Carousel() {
   };
 
   return (
-    <div className="container w-[500px] mx-auto 2xl:w-[800px]">
+    <div className="cardContainer mx-auto w-[310px] sm:w-[565px] md:w-[680px] lg:w-[920px] xl:w-[960px] 2xl:w-[800px]">
       <Slider {...settings}>
         {React.Children.toArray(
           initalState.map((item) => (
-            <div className="card border border-white  rounded overflow-hidden h-[200px] 2xl:h-[300px] shadow-md shadow-gray-600 ">
-              <div className="h-full ">
+            <div className=" border border-white rounded overflow-hidden h-[230px] md:h-[260px] lg:h-[290px] 2xl:h-[300px] shadow-md shadow-salmon ">
+              <div className="h-full">
                 <img
                   className="w-full h-full"
                   src={item.img}
@@ -65,4 +65,4 @@ function Carousel() {
   );
 }
 
-export default Carousel;
+export default CarouselDetail;

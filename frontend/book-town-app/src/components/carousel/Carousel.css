@@ -35,10 +35,15 @@
   .container{
     width: 130px;
     height: 300px;
+    
   }
   .slick-prev:before,
   .slick-next:before {
   color: rgb(145, 130, 130);
   display: block;
+}
+.slick-dots{
+  position: absolute;
+  bottom: -45px;
 }
 }
