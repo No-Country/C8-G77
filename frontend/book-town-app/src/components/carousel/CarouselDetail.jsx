@@ -45,7 +45,7 @@ function CarouselDetail() {
   };
 
   return (
-    <div className="cardContainer mx-auto w-[310px] sm:w-[565px] md:w-[680px] lg:w-[920px] xl:w-[960px] 2xl:w-[800px]">
+    <div className="cardContainer mx-auto w-[310px] sm:w-[565px] md:w-[680px] lg:w-[920px] xl:w-[960px] 2xl:w-[970px]">
       <Slider {...settings}>
         {React.Children.toArray(
           initalState.map((item) => (
