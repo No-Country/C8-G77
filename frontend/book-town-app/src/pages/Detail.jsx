@@ -6,8 +6,8 @@ export const Detail = () => {
   return (
     <>
       <div className="flex flex-col">
-        <div className="w-full bg-gradient-to-r from-beigeOscuro to-beige h-full md:flex md:flex-row justify-center items-center">
-          <div className="my-14 mx-auto w-48 md:my-10 md:w-1/2">
+        <div className="w-full bg-gradient-to-r from-red-300 to-beige h-full md:flex md:flex-row justify-center items-center">
+          <div className="my-14 mx-auto w-48 md:my-10 md:w-1/2 md:border-solid md:border-r-2 lg:border-solid lg:border-r-2 xl:border-solid xl:border-r-2 2xl:border-solid 2xl:border-r-2 border-vino">
             <h1 className="text-center font-bold text-3xl xl:text-4xl pb-2">
               Harry Potter
             </h1>
