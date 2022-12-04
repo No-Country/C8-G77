@@ -9,13 +9,22 @@ const Cart = db.define('cart', {
         autoIncrement: true,
         allowNull: false
     },
-    bookName:{
+    userId: {
+        type: DataTypes.UUID,
+        allowNull: false,
+        field: 'user_id',
+        references: {
+            key: 'id',
+            model: Users
+        }
+    },
+    bookName: {
         type: DataTypes.STRING,
         allowNull: false,
         field: 'book_name'
     },
-    value:{
-        type: DataTypes.DECIMAL(4, 2),
+    value: {
+        type: DataTypes.DECIMAL,
         allowNull: false
     },
     amount: {
@@ -25,15 +34,6 @@ const Cart = db.define('cart', {
     total: {
         type: DataTypes.DECIMAL,
         allowNull: false
-    },
-    idUser: {
-        type: DataTypes.UUID,
-        allowNull: false,
-        field: 'id_user',
-        references:{
-            key: 'id',
-            model: Users
-        }
     }
 })
 

@@ -1,4 +1,4 @@
-const {DataTypes} = require('sequelize')
+const { DataTypes } = require('sequelize')
 const db = require('../utils/database')
 const Users = require('./users.models')
 
@@ -8,19 +8,31 @@ const Orders = db.define('orders', {
         primaryKey: true,
         allowNull: false
     },
-    idUser: {
+    userId: {
         type: DataTypes.UUID,
         allowNull: false,
-        field: 'id_user',
-        references:{
+        field: 'user_id',
+        references: {
             key: 'id',
             model: Users
         }
     },
-    totalOrder: {
-        type: DataTypes.DECIMAL(6,2),
+    bookName: {
+        type: DataTypes.STRING,
         allowNull: false,
-        field: 'total_order'
+        field: 'book_name'
+    },
+    value: {
+        type: DataTypes.DECIMAL,
+        allowNull: false
+    },
+    amount: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    total: {
+        type: DataTypes.DECIMAL,
+        allowNull: false
     },
     dateOrder: {
         type: DataTypes.DATEONLY,

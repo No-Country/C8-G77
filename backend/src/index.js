@@ -4,6 +4,7 @@ const initModels = require('./models/initModels')
 const { port } = require('./config')
 const useRouter = require('./users/users.router')
 const authRouter = require('./auth/auth.router')
+const cartRouter = require('./cart/cart.router')
 
 const app = express()
 app.use(express.json())
@@ -27,5 +28,6 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/users', useRouter)
 app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/cart', cartRouter)
 
 app.listen(port, () => console.log('Success 😺😺😺 ' + port)) 
