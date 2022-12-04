@@ -86,7 +86,6 @@
 ```
 
 - Routes
-  - /api/v1
   - /api/v1/users
     - /me
     - /:id
@@ -94,4 +93,20 @@
     - /:id
   - /purchases
     - /details
-    - /:id
+  - /auth
+    - /login
+    - /register
+
+- Methods
+  - /users
+    - GET
+    - POST
+    - PATCH
+    - DELETE
+  - /cart
+    - GET
+    - POST
+    - DELETE
+  - /purchases
+    - GET
+    - POST
