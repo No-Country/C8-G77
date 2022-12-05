@@ -1,0 +1,47 @@
+/* images gap */
+.slick-slide > div {
+  margin: 0 6px;
+}
+.slick-list {
+  margin: 0 -10px;
+}
+
+/* arrow color */
+
+.slick-prev:before,
+.slick-next:before {
+  color: rgb(145, 130, 130);
+  display: none;
+}
+
+
+
+
+.slick-prev:before:hover{
+  opacity:0.75;
+}
+
+.slick-next:before:hover{
+  opacity: 0.75;
+}
+
+/* querys carousel mobile*/
+@media screen and (min-width: 600px) and (max-width:639px){ 
+  .cardContainer{
+    width: 530px;
+    height: 280px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 599px) { 
+  .cardContainer{
+    width: 414px;
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 1024px) { 
+  .slick-slide > div {
+    margin: 0 8px;
+  }
+}
