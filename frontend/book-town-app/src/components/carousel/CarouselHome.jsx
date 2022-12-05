@@ -73,6 +73,7 @@ function CarouselHome({ genre }) {
                   src={item.cover}
                   alt={item.thumbnail}
                 />
+                <button>Add to cart</button>
               </div>
             </div>
           ))
