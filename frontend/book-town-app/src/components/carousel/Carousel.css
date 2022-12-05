@@ -23,6 +23,11 @@
   opacity: 0.75;
 }
 
+.slick-dots li button:before{
+  color: rgb(123, 99, 230) !important;
+  font-size: 10px !important;
+}
+
 /* querys carousel mobile*/
 @media screen and (min-width: 481px) and (max-width: 600px) { 
   .container{
@@ -42,8 +47,7 @@
   color: rgb(145, 130, 130);
   display: block;
 }
-.slick-dots{
-  position: absolute;
-  bottom: -45px;
+.slick-dots li button:before{
+  margin-top: 25px;
 }
 }

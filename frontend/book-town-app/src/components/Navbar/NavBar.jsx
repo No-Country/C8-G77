@@ -59,14 +59,6 @@ function NavBar() {
                   Account
                 </Link>
               </li>
-              <li className="my-5 md:ml-8 lg:ml-8">
-                <Link
-                  to="/history"
-                  className="text-white hover:text-orange-100"
-                >
-                  History
-                </Link>
-              </li>
               <button className="my-5 md:ml-8 lg:ml-8 bg-pink-600 hover:bg-pink-500 hover:font-bold ease-in-out duration-300 p-2 rounded">
                 <Link to="/cart" className="text-white">
                   Shoppig Cart

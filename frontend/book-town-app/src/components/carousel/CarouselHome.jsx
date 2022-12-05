@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
 import "./CarouselDetail.css";
 
-function CarouselDetail({ genre }) {
+function CarouselHome({ genre }) {
   const [books, setBooks] = useState(null);
 
   const getAllBooks = () => {
@@ -61,12 +61,13 @@ function CarouselDetail({ genre }) {
   };
 
   return (
-    <div className="cardContainer mx-auto w-[280px] sm:w-[565px] md:w-[680px] lg:w-[920px] xl:w-[960px] 2xl:w-[970px]">
+    <div className="cardContainer mx-auto w-[280px] sm:w-[565px] md:w-[680px] lg:w-[1040px] xl:w-[1050px] 2xl:w-[970px]">
       <Slider {...settings}>
         {React.Children.toArray(
           books?.map((item) => (
             <div className=" border border-white rounded overflow-hidden h-[230px] md:h-[260px] lg:h-[290px] 2xl:h-[300px] shadow-md shadow-black ">
               <div className="h-full">
+                <h1>{item.volumeInfo.categories}</h1>
                 <img
                   className="w-full h-full"
                   src={item.volumeInfo.imageLinks.thumbnail}
@@ -81,4 +82,4 @@ function CarouselDetail({ genre }) {
   );
 }
 
-export default CarouselDetail;
+export default CarouselHome;

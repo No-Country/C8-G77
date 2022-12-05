@@ -4,9 +4,9 @@ import CarouselDetail from "../components/carousel/CarouselDetail";
 
 export const Detail = () => {
   return (
-    <>
+    <div>
       <div className="flex flex-col">
-        <div className="w-full bg-gradient-to-r from-red-300 to-beige h-full md:flex md:flex-row justify-center items-center">
+        <div className="w-full bg-gray-200 md:flex md:flex-row justify-center items-center">
           <div className="my-14 mx-auto w-48 md:my-10 md:w-1/2 md:border-solid md:border-r-2 lg:border-solid lg:border-r-2 xl:border-solid xl:border-r-2 2xl:border-solid 2xl:border-r-2 border-vino">
             <h1 className="text-center font-bold text-3xl xl:text-4xl pb-2">
               Harry Potter
@@ -56,8 +56,8 @@ export const Detail = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gradient-to-r from-salmon to-bordo py-12">
-        <h1 className="pb-6  text-2xl lg:text-3xl xl:text-3xl font-bold text-center text-gray-100">
+      <div className="bg-gray-900 py-12">
+        <h1 className="pb-6  text-2xl lg:text-3xl xl:text-3xl font-bold text-center text-gray-200">
           Related
         </h1>
         <div className="w-full flex justify-center">
@@ -66,7 +66,7 @@ export const Detail = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Detail;

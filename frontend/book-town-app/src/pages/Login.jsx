@@ -17,7 +17,7 @@ export const Login = () => {
                 ❞
               </span>
             </h1>
-            <Carousel />
+            <Carousel genre={"hola"} />
           </div>
         </div>
 
