@@ -19,10 +19,10 @@ const BooksTags = db.define('books_tags', {
             model: Books
         },
     },
-    tagsId: {
+    tagId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        field: 'tags_id',
+        field: 'tag_id',
         references: {
             key: 'id',
             model: Tags

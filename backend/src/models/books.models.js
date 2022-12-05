@@ -10,6 +10,7 @@ const Books = db.define('books', {
     title: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
     },
     author: {
         type: DataTypes.STRING,
@@ -32,14 +33,6 @@ const Books = db.define('books', {
         allowNull: false,
     },
     lenguage: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    urlDetails: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    urlDownload: {
         type: DataTypes.STRING,
         allowNull: false,
     },

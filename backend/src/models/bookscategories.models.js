@@ -19,10 +19,10 @@ const BooksCategories = db.define('books_categories', {
             model: Books
         }
     },
-    categoriesId: {
+    categoryId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        field: 'categories_id',
+        field: 'category_id',
         references: {
             key: 'id',
             model: Categories
