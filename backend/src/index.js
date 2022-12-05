@@ -5,6 +5,7 @@ const { port } = require('./config')
 const useRouter = require('./users/users.router')
 const authRouter = require('./auth/auth.router')
 const cartRouter = require('./cart/cart.router')
+const categoriesRouter = require('./categories/categories.router')
 
 const app = express()
 app.use(express.json())
@@ -29,5 +30,6 @@ app.get('/', (req, res) => {
 app.use('/api/v1/users', useRouter)
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/cart', cartRouter)
+app.use('/api/v1/categories', categoriesRouter)
 
 app.listen(port, () => console.log('Success 😺😺😺 ' + port)) 
