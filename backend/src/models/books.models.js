@@ -46,7 +46,6 @@ const Books = db.define('books', {
     },
     price: {
         type: DataTypes.DECIMAL,
-        allowNull: false
     }
 })
 
