@@ -13,7 +13,13 @@ const booksCategoriesRouter = require('./booksCategories/booksCategories.router'
 const app = express()
 app.use(express.json())
 
-app.use(cors())
+const corsConfig ={
+    origin:'http://localhost:3000', 
+    credentials:true,            
+    optionSuccessStatus:200
+}
+
+app.use(cors(corsConfig))
 
 db.authenticate()
     .then(() => console.log('DB autentication successfully'))

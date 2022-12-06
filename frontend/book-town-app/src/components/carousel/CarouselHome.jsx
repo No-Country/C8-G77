@@ -11,8 +11,7 @@ function CarouselHome({ genre }) {
 
   const getAllBooks = () => {
     const url = `https://pseudo-booktown.onrender.com/api/v1/books`;
-    axios
-      .get(url)
+    axios.get(url)
       .then((res) => setBooks(res.data))
       .catch((err) => console.log(err));
   };
