@@ -13,7 +13,11 @@ const app = express()
 app.use(express.json())
 
 const corsConfig = {
-    origin: '*'
+    allowedHeaders: ['sessionId', 'Content-Type'],
+    exposedHeaders: ['sessionId'],
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false
 }
 
 app.use(cors(corsConfig))
@@ -40,5 +44,6 @@ app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/cart', cartRouter)
 app.use('/api/v1/categories', categoriesRouter)
 app.use('/api/v1/books', bookRouter)
+
 
 app.listen(port, () => console.log('Success 😺😺😺 ' + port)) 
