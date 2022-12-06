@@ -12,10 +12,8 @@ const bookRouter = require('./books/books.router')
 const app = express()
 app.use(express.json())
 
-const corsConfig ={
-    origin:'http://localhost:3000', 
-    credentials:true,            
-    optionSuccessStatus:200
+const corsConfig = {
+    origin: '*'
 }
 
 app.use(cors(corsConfig))

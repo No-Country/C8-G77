@@ -27,6 +27,7 @@ const createBook = async (data) => {
         lenguage: data.lenguage,
         cover: data.cover,
         thumbnail: data.thumbnail,
+        price: data.price
     })
     return response
 }

@@ -44,6 +44,10 @@ const Books = db.define('books', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    price: {
+        type: DataTypes.DECIMAL,
+        allowNull: false
+    }
 })
 
 module.exports = Books

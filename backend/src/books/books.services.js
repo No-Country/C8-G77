@@ -14,9 +14,9 @@ const getBookById = (req, res) => {
 }
 
 const postBook = (req, res) => {
-    const { title, author, content, publisherDate, qualification, pages, lenguage, cover, thumbnail } = req.body
-    if (title && author && content && publisherDate && qualification && pages && lenguage   && cover && thumbnail) {
-        booksControllers.createBook({ title, author, content, publisherDate, qualification, pages, lenguage, cover, thumbnail })
+    const { title, author, content, publisherDate, qualification, pages, lenguage, cover, thumbnail, price } = req.body
+    if (title && author && content && publisherDate && qualification && pages && lenguage   && cover && thumbnail && price) {
+        booksControllers.createBook({ title, author, content, publisherDate, qualification, pages, lenguage, cover, thumbnail, price })
             .then(data => { res.status(200).json(data) })
             .catch(err => { res.status(400).json({ message: err.message }) })
     } else {
@@ -32,6 +32,7 @@ const postBook = (req, res) => {
                 lenguage: 'string',
                 cover: 'string',
                 thumbnail: 'string',
+                price: 'decimal'
             }
         })
     }
@@ -39,8 +40,8 @@ const postBook = (req, res) => {
 
 const patchBook = (req, res) => {
     const id = req.params.id
-    const { title, author, content, publisherDate, qualification, pages, lenguage, cover, thumbnail } = req.body
-    booksControllers.updateBook(id, { title, author, content, publisherDate, qualification, pages, lenguage, cover, thumbnail })
+    const { title, author, content, publisherDate, qualification, pages, lenguage, cover, thumbnail, price } = req.body
+    booksControllers.updateBook(id, { title, author, content, publisherDate, qualification, pages, lenguage, cover, thumbnail, price })
         .then(data => {
             if (data[0]) {
                 res.status(200).json({ message: `Book with id: ${id}, edited successfully` })
