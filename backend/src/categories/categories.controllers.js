@@ -1,4 +1,5 @@
 const Categories = require('../models/categories.models')
+const Users = require('../models/users.models')
 
 const getAllCategories = async () => {
     const data = await Categories.findAll()
@@ -17,6 +18,10 @@ const getCategorieById = async (id) => {
 const createCategory = async (data) => {
     const response = await Categories.create({
         name: data.name
+    }, {
+        include: {
+            model: Users
+        }
     })
     return response
 }
