@@ -11,7 +11,8 @@ function CarouselHome({ genre }) {
 
   const getAllBooks = () => {
     const url = `https://pseudo-booktown.onrender.com/api/v1/books`;
-    axios.get(url)
+    axios
+      .get(url)
       .then((res) => setBooks(res.data))
       .catch((err) => console.log(err));
   };
@@ -60,7 +61,7 @@ function CarouselHome({ genre }) {
   };
 
   return (
-    <div className="cardContainer mx-auto w-[280px] sm:w-[565px] md:w-[680px] lg:w-[1040px] xl:w-[1050px] 2xl:w-[970px]">
+    <div className="cardContainer mx-auto w-[280px] sm:w-[565px] md:w-[680px] lg:w-[1040px] xl:w-[1050px] 2xl:w-[970px] xl::max-w-[1366px]">
       <Slider {...settings}>
         {React.Children.toArray(
           books?.map((item) => (
@@ -72,6 +73,7 @@ function CarouselHome({ genre }) {
                   src={item.cover}
                   alt={item.thumbnail}
                 />
+                <button>Add to cart</button>
               </div>
             </div>
           ))
