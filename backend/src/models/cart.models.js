@@ -18,23 +18,6 @@ const Cart = db.define('cart', {
             model: Users
         }
     },
-    bookName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        field: 'book_name'
-    },
-    value: {
-        type: DataTypes.DECIMAL,
-        allowNull: false
-    },
-    amount: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    total: {
-        type: DataTypes.DECIMAL,
-        allowNull: false
-    }
 })
 
 module.exports = Cart
