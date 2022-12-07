@@ -10,9 +10,8 @@ function CarouselHome({ genre }) {
   const [books, setBooks] = useState(null);
 
   const getAllBooks = () => {
-    const url = `https://www.etnassoft.com/api/v1/get/?category=${genre}`;
-    axios
-      .get(url)
+    const url = `https://pseudo-booktown.onrender.com/api/v1/books`;
+    axios.get(url)
       .then((res) => setBooks(res.data))
       .catch((err) => console.log(err));
   };
@@ -67,7 +66,7 @@ function CarouselHome({ genre }) {
           books?.map((item) => (
             <div className=" border border-white rounded overflow-hidden h-[230px] md:h-[260px] lg:h-[290px] 2xl:h-[300px] shadow-md shadow-black ">
               <div className="h-full">
-                <h1>{item.categories[0].name}</h1>
+                {/* <h1>{item.categories[0].name}</h1> */}
                 <img
                   className="w-full h-full"
                   src={item.cover}
