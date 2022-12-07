@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-
-function Cart() {
-  const [cart, setCart] = useState(null)
-  useEffect(() => {
-    const URL = 'https://pseudo-booktown.onrender.com/api/v1/cart'
-    axios.get(URL)
-      .then(res => setCart(res.data))
-      .catch(err => console.log(err))
-  }, [])
-  console.log(cart)
-  return <div>
-
-  </div>;
-=======
 import React from "react";
 import CartDetail from "../components/cart/CartDetail";
 import { FaShoppingCart } from "react-icons/fa";
@@ -46,7 +29,6 @@ function Cart() {
       </div>
     </div>
   );
->>>>>>> 258cc48ac656a7b5eb1826f711a4b3b63e11a622
 }
 
 export default Cart;

@@ -14,14 +14,15 @@ const initModels = () => {
     Orders.belongsTo(Users)
     Users.hasMany(Orders)
 
+    Books.belongsToMany(Categories, { through: BooksCategories }) 
+    Categories.belongsToMany(Books, { through: BooksCategories })
     BooksCategories.belongsTo(Books)
     Books.hasMany(BooksCategories)
-
     BooksCategories.belongsTo(Categories)
     Categories.hasMany(BooksCategories)
 
-    Books.belongsToMany(Tags, {through: BookTags})
-    Tags.belongsToMany(Books, {through: BookTags})
+    Books.belongsToMany(Tags, { through: BookTags })
+    Tags.belongsToMany(Books, { through: BookTags })
     BookTags.belongsTo(Books)
     Books.hasMany(BookTags)
     BookTags.belongsTo(Tags)

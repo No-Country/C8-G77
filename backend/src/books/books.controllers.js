@@ -31,7 +31,7 @@ const createBook = async (data) => {
         cover: data.cover,
         thumbnail: data.thumbnail,
         price: data.price,
-        tags: data/* data.tags.map(tag=>{
+        tags: data.tags/* data.tags.map(tag=>{
             return( {
                 name: tag.name,
                 BookTags: {
@@ -45,9 +45,14 @@ const createBook = async (data) => {
                 categoryId: 
             }
         })) */
-    }, {
-        include: Tags
     })
+    const tagsId = response.tags.map(tag => {
+        return {
+            bookId: response.id,
+            tagId: tag.id
+        }
+    })
+    await BookTags.bulkCreate(tagsId)
 
     return { response }
 }
