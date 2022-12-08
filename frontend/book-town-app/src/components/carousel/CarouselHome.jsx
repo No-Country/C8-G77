@@ -1,26 +1,11 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import axios from "axios";
 import "./CarouselDetail.css";
+import BookItem from "./BookItem";
 
-function CarouselHome({ genre }) {
-  const [books, setBooks] = useState(null);
-
-  const getAllBooks = () => {
-    const url = `https://pseudo-booktown.onrender.com/api/v1/books`;
-    axios
-      .get(url)
-      .then((res) => setBooks(res.data))
-      .catch((err) => console.log(err));
-  };
-
-  useEffect(() => {
-    getAllBooks();
-  }, []);
-  console.log(books);
+function CarouselHome({ genre, books }) {
 
   const settings = {
     dots: true,
@@ -65,17 +50,7 @@ function CarouselHome({ genre }) {
       <Slider {...settings}>
         {React.Children.toArray(
           books?.map((item) => (
-            <div className=" border border-white rounded overflow-hidden h-[230px] md:h-[260px] lg:h-[290px] 2xl:h-[300px] shadow-md shadow-black ">
-              <div className="h-full">
-                {/* <h1>{item.categories[0].name}</h1> */}
-                <img
-                  className="w-full h-full"
-                  src={item.cover}
-                  alt={item.thumbnail}
-                />
-                <button>Add to cart</button>
-              </div>
-            </div>
+            <BookItem key={item.id} book={item}/>
           ))
         )}
       </Slider>

@@ -2,6 +2,7 @@ import React from "react";
 import UserImg from "../../assets/UserImg.jpg";
 
 function UserAccount() {
+  
   return (
     <div className="flex-col lg:flex lg:flex-row justify-center items-center w-full h-screen">
       <div className=" w-[280px] lg:w-1/4 m-auto py-5">

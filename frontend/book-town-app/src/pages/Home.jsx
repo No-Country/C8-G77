@@ -2,9 +2,13 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import CarouselHome from "../components/carousel/CarouselHome";
 import Dropdown from "../components/Navbar/Dropdown";
+import { getAllBooks } from '../store/slices/book.slice'
+import {useDispatch, useSelector} from 'react-redux'
 
 function Home() {
   const [genres, setGenres] = useState(null);
+  const dispatch = useDispatch()
+  const books = useSelector(state => state.booksSlice)
 
   useEffect(() => {
     const url = "https://pseudo-booktown.onrender.com/api/v1/categories";
@@ -12,6 +16,8 @@ function Home() {
       .get(url)
       .then((res) => setGenres(res.data))
       .catch((err) => console.log(err));
+
+    dispatch(getAllBooks())
   }, []);
   console.log(genres);
 
@@ -25,16 +31,16 @@ function Home() {
 
       <div className="py-16">
         <h1></h1>
-        <CarouselHome genre={"Ciencia"} />
+        <CarouselHome genre={"Ciencia"} books={books} />
       </div>
       <div className="py-16">
-        <CarouselHome genre={"Cómics"} />
+        <CarouselHome genre={"Cómics"} books={books} />
       </div>
       <div className="py-16">
-        <CarouselHome genre={"Electrónica"} />
+        <CarouselHome genre={"Electrónica"} books={books} />
       </div>
       <div className="py-16">
-        <CarouselHome genre={"Redes y Sys Admin"} />
+        <CarouselHome genre={"Redes y Sys Admin"} books={books} />
       </div>
     </div>
   );
