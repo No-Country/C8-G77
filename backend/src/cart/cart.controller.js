@@ -3,16 +3,17 @@ const Cart = require('../models/cart.models')
 const getAllProducts = async (id) => {
     const data = await Cart.findAll({
         where: {
-            userId: id
+            userId: id,
         }
     })
     return data
 }
 
 const createProduct = async (data) => {
-    const response = await Cart.create({
-        amount: data.amount,
+    const response = await BooksCart.create({
+        
     })
+
     return response
 }
 
