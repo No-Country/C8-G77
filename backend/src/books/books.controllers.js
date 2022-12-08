@@ -14,7 +14,7 @@ const getAllBooks = async () => {
                 }
             }
         ],
-        attributes:{
+        attributes: {
             exclude: ['createdAt', 'updatedAt']
         }
     })
@@ -83,6 +83,20 @@ const deleteBook = async (id) => {
     return data
 }
 
+const getBooksByCategory = async (categoryId) => {
+    const data = await Books.findAll({
+        where: {
+            category: [
+                {
+                    id: categoryId
+                }
+            ]
+            
+        }
+    })
+    return data
+}
+
 const addTag = async (data) => {
     await BookTags.bulkCreate(data)
 }
@@ -93,4 +107,5 @@ module.exports = {
     createBook,
     updateBook,
     deleteBook,
+    getBooksByCategory
 }
