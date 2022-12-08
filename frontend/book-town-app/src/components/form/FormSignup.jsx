@@ -1,144 +1,168 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios'
-import { useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 function FormSignup() {
-  const { register, handleSubmit, reset } = useForm()
-  const navigate = useNavigate()
+  const { register, handleSubmit, reset } = useForm();
+  const navigate = useNavigate();
 
-  const submit = data => {
-    const URL = 'https://pseudo-booktown.onrender.com/api/v1/auth/register'
-    axios.post(URL, data)
-      .then(res => {
+  const submit = (data) => {
+    const URL = "https://pseudo-booktown.onrender.com/api/v1/auth/register";
+    axios
+      .post(URL, data)
+      .then((res) => {
         console.log(res.data);
-        navigate(`/login`)
+        navigate(`/login`);
       })
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err));
 
     reset({
-      firstName: '',
-      lastName: '',
-      age: '',
-      email: '',
-      birthday: '',
-      phone: '',
-      bookPreference: '',
-      password: '',
-      country: ''
-    })
-  }
+      firstName: "",
+      lastName: "",
+      age: "",
+      email: "",
+      birthday: "",
+      phone: "",
+      bookPreference: "",
+      password: "",
+      country: "",
+    });
+  };
   return (
-    <form className=" bg-gray-900 px-12 py-10 sm:px-16 max-sm:rounded-none rounded-3xl border-2 shadow-lg shadow-gray-900 lg:px-16 xl:px-10 xl:py-8 2xl:px-24 2xl:py-20" onSubmit={handleSubmit(submit)}>
-      <h2 className="text-3xl 2xl:text-4xl font-semibold text-center text-white 2xl:pb-12">Sign Up</h2>
+    <form
+      className=" bg-gray-900 px-12 py-10 sm:px-16  shadow-lg shadow-gray-900 lg:px-16 w-full h-full rounded-none 2xl:px-24 2xl:py-20"
+      onSubmit={handleSubmit(submit)}
+    >
+      <h2 className="text-3xl 2xl:text-4xl font-semibold text-center text-white 2xl:pb-12">
+        Sign Up
+      </h2>
       <p className="font-medium text-lg 2xl:text-2xl text-gray-200 mt-4 text-center">
         You are new? Join us!
       </p>
       <div className="mt-8">
         <div>
-          <label htmlFor="firstName" className="text-lg font-medium text-gray-200">
+          <label
+            htmlFor="firstName"
+            className="text-lg font-medium text-gray-200"
+          >
             First Name
           </label>
           <input
-          {...register('firstName')}
-            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300"
+            {...register("firstName")}
+            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300 text-gray-300"
             placeholder="Enter your first Name"
             type="text"
             id="firstName"
           />
         </div>
-        <div>
-          <label htmlFor="lastName" className="text-lg font-medium text-gray-200">
+        <div className="mt-8">
+          <label
+            htmlFor="lastName"
+            className="text-lg font-medium text-gray-200"
+          >
             Last Name
           </label>
           <input
-          {...register('lastName')}
-            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300"
+            {...register("lastName")}
+            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300 text-gray-300"
             placeholder="Enter your last Name"
             type="text"
             id="lastName"
           />
         </div>
-        <div>
+        <div className="mt-8">
           <label htmlFor="age" className="text-lg font-medium text-gray-200">
             Age
           </label>
           <input
-          {...register('age')}
-            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300"
+            {...register("age")}
+            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300 text-gray-300"
             placeholder="Enter your age"
             type="text"
             id="age"
           />
         </div>
-        <div>
+        <div className="mt-8">
           <label htmlFor="email" className="text-lg font-medium text-gray-200">
             Email
           </label>
           <input
-          {...register('email')}
-            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300"
+            {...register("email")}
+            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300 text-gray-300"
             placeholder="Enter your email"
             type="email"
             id="email"
           />
         </div>
-        <div>
-          <label htmlFor="birthday" className="text-lg font-medium text-gray-200">
+        <div className="mt-8">
+          <label
+            htmlFor="birthday"
+            className="text-lg font-medium text-gray-200"
+          >
             Birthday
           </label>
           <input
-          {...register('birthday')}
-            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300"
+            {...register("birthday")}
+            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300 text-gray-300"
             placeholder="YYYY/MM/DD"
             type="text"
             id="birthday"
           />
         </div>
-        <div>
+        <div className="mt-8">
           <label htmlFor="phone" className="text-lg font-medium text-gray-200">
             Phone
           </label>
           <input
-          {...register('phone')}
-            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300"
+            {...register("phone")}
+            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300 text-gray-300"
             placeholder="Enter your phone"
             type="text"
             id="phone"
           />
         </div>
-        <div>
-          <label htmlFor="bookPreference" className="text-lg font-medium text-gray-200">
+        <div className="mt-8">
+          <label
+            htmlFor="bookPreference"
+            className="text-lg font-medium text-gray-200"
+          >
             Books Preference
           </label>
           <input
-          {...register('bookPreference')}
-            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300"
+            {...register("bookPreference")}
+            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300 text-gray-300"
             placeholder="Enter your book Preference"
             type="etxt"
             id="bookPreference"
           />
         </div>
         <div className="mt-8">
-          <label htmlFor="password" className="text-lg font-medium text-gray-200">
+          <label
+            htmlFor="password"
+            className="text-lg font-medium text-gray-200"
+          >
             Password
           </label>
           <input
-          {...register('password')}
-            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300"
+            {...register("password")}
+            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300 text-gray-300"
             placeholder="Enter your password"
             type="password"
             id="password"
           />
         </div>
         <div className="mt-8">
-          <label htmlFor="country" className="text-lg font-medium text-gray-200">
-           Country
+          <label
+            htmlFor="country"
+            className="text-lg font-medium text-gray-200"
+          >
+            Country
           </label>
           <input
-          {...register('country')}
-            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300"
+            {...register("country")}
+            className="w-full rounded-xl p-3 mt-1 bg-gray-800 outline-violet-300 text-gray-300"
             placeholder="Enter your country"
             type="text"
             id="country"

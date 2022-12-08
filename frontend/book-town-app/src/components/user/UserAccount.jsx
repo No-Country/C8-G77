@@ -30,9 +30,6 @@ function UserAccount() {
         <p className="font-bold py-5">
           Country: <span className="font-normal">Argentina</span>
         </p>
-        <p className="font-bold py-5">
-          Genre: <span className="font-normal">Male</span>
-        </p>
       </div>
     </div>
   );

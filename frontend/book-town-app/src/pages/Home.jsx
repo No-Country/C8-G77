@@ -22,7 +22,7 @@ function Home() {
   console.log(genres);
 
   return (
-    <div className="bg-gray-200 h-full border-solid border-2 border-black pb-10">
+    <div className="bg-gray-200 h-full pb-10">
       <div className="absolute left-10">
         <button className="my-5 md:ml-8 lg:ml-8">
           {genres && <Dropdown options={genres} />}
