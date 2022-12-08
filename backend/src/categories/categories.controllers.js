@@ -18,10 +18,6 @@ const getCategorieById = async (id) => {
 const createCategory = async (data) => {
     const response = await Categories.create({
         name: data.name
-    }, {
-        include: {
-            model: Users
-        }
     })
     return response
 }
