@@ -1,26 +1,36 @@
-const {DataTypes} = require('sequelize')
+const { DataTypes } = require('sequelize')
 const db = require('../utils/database')
 const Users = require('./users.models')
+const PaymenthMethods = require('./paymentMethods.models')
 
 const Orders = db.define('orders', {
     id: {
         type: DataTypes.UUID,
         primaryKey: true,
+        unique: true,
         allowNull: false
     },
-    idUser: {
+    userId: {
         type: DataTypes.UUID,
         allowNull: false,
-        field: 'id_user',
-        references:{
+        field: 'user_id',
+        references: {
             key: 'id',
             model: Users
         }
     },
-    totalOrder: {
-        type: DataTypes.DECIMAL(6,2),
+    paymenthMethodId: {
+        type: DataTypes.INTEGER,
         allowNull: false,
-        field: 'total_order'
+        field: 'paymenth_method_id',
+        references: {
+            key: 'id',
+            model: PaymenthMethods
+        }
+    },
+    total: {
+        type: DataTypes.DECIMAL,
+        allowNull: false
     },
     dateOrder: {
         type: DataTypes.DATEONLY,

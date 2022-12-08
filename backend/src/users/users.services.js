@@ -15,10 +15,10 @@ const getUserById = (req, res) => {
 }
 
 const postUser = (req, res) => {
-    const { firstName, lastName, age, email, birthday, phone, gender, bookPreference, password, country } = req.body
+    const { firstName, lastName, age, email, birthday, phone, genre, bookPreference, password, country } = req.body
 
     if (firstName && lastName && age && email && birthday && phone && bookPreference && password) {
-        usersControllers.createUser({ firstName, lastName, age, email, birthday, phone, gender, bookPreference, password, country })
+        usersControllers.createUser({ firstName, lastName, age, email, birthday, phone, genre, bookPreference, password, country })
             .then(data => { res.status(200).json(data) })
             .catch(err => { res.status(400).json({ message: err.message }) })
     } else {

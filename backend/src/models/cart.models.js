@@ -9,32 +9,15 @@ const Cart = db.define('cart', {
         autoIncrement: true,
         allowNull: false
     },
-    bookName:{
-        type: DataTypes.STRING,
-        allowNull: false,
-        field: 'book_name'
-    },
-    value:{
-        type: DataTypes.DECIMAL(4, 2),
-        allowNull: false
-    },
-    amount: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    total: {
-        type: DataTypes.DECIMAL,
-        allowNull: false
-    },
-    idUser: {
+    userId: {
         type: DataTypes.UUID,
         allowNull: false,
-        field: 'id_user',
-        references:{
+        field: 'user_id',
+        references: {
             key: 'id',
             model: Users
         }
-    }
+    },
 })
 
 module.exports = Cart

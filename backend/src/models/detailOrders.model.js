@@ -1,42 +1,42 @@
 const { DataTypes } = require('sequelize')
 const db = require('../utils/database')
-const Orders = require('./orders.models')
+const Orders = require('../models/orders.models')
+const Books = require('../models/books.models')
 
 const DetailOrders = db.define('detail_orders', {
     id: {
         type: DataTypes.INTEGER,
-        autoIncrement: true,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
+        autoIncrement: true,
+        unique: true
     },
-    idOrder: {
+    orderId:{
         type: DataTypes.UUID,
         allowNull: false,
-        field: 'idOrder',
+        field: 'order_id',
         references: {
             key: 'id',
             model: Orders
         }
     },
-    bookName: {
-        type: DataTypes.STRING,
+    bookId: {
+        type: DataTypes.UUID,
         allowNull: false,
-        field: 'book_name'
-    },
-    value: {
-        type: DataTypes.DECIMAL(3, 2),
-        allowNull: false
-    },
+        field: 'book_id',
+        references: {
+            key: 'id',
+            model: Books
+        }
+    }, 
     amount: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
     },
-    total: {
-        type: DataTypes.DECIMAL(6, 2),
+    tottal: {
+        type: DataTypes.DECIMAL,
         allowNull: false
     }
-}, {
-    timestamps: false
 })
 
 module.exports = DetailOrders
