@@ -1,5 +1,8 @@
 const uuid = require('uuid')
 const Books = require('../models/books.models')
+const BooksCategories = require('../models/categories.models')
+const Tags = require('../models/tags.models')
+const BookTags = require('../models/bookTags.model')
 
 const getAllBooks = async () => {
     const data = await Books.findAll()
@@ -27,9 +30,31 @@ const createBook = async (data) => {
         lenguage: data.lenguage,
         cover: data.cover,
         thumbnail: data.thumbnail,
-        price: data.price
+        price: data.price,
+        tags: data.tags/* data.tags.map(tag=>{
+            return( {
+                name: tag.name,
+                BookTags: {
+                    selfGranted: false
+                }
+            })
+        }) */
+        /* addTag(data.tags.map(tag =>{
+            return{
+                bookId: data.id,
+                categoryId: 
+            }
+        })) */
     })
-    return response
+    const tagsId = response.tags.map(tag => {
+        return {
+            bookId: response.id,
+            tagId: tag.id
+        }
+    })
+    await BookTags.bulkCreate(tagsId)
+
+    return { response }
 }
 
 const updateBook = async (id, data) => {
@@ -38,7 +63,8 @@ const updateBook = async (id, data) => {
             id: id
         }
     })
-    return response
+
+    return { response }
 }
 
 const deleteBook = async (id) => {
@@ -50,10 +76,14 @@ const deleteBook = async (id) => {
     return data
 }
 
+const addTag = async (data) => {
+    await BookTags.bulkCreate(data)
+}
+
 module.exports = {
     getAllBooks,
     getBooksById,
     createBook,
     updateBook,
-    deleteBook
+    deleteBook,
 }

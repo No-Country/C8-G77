@@ -14,9 +14,9 @@ const getBookById = (req, res) => {
 }
 
 const postBook = (req, res) => {
-    const { title, author, content, publisherDate, qualification, pages, lenguage, cover, thumbnail, price } = req.body
-    if (title && author && content && publisherDate && qualification && pages && lenguage   && cover && thumbnail && price) {
-        booksControllers.createBook({ title, author, content, publisherDate, qualification, pages, lenguage, cover, thumbnail, price })
+    const { title, author, content, publisherDate, qualification, pages, lenguage, cover, thumbnail, price, tags } = req.body
+    if (title && author && content && publisherDate && qualification && pages && lenguage && cover && thumbnail && price) {
+        booksControllers.createBook({ title, author, content, publisherDate, qualification, pages, lenguage, cover, thumbnail, price, tags })
             .then(data => { res.status(200).json(data) })
             .catch(err => { res.status(400).json({ message: err.message }) })
     } else {
@@ -65,10 +65,12 @@ const deleteBook = (req, res) => {
         .catch(err => res.status(400).json({ message: err.message }))
 }
 
+
 module.exports = {
     getAllBooks,
     getBookById,
     postBook,
     patchBook,
-    deleteBook
+    deleteBook,
+
 }

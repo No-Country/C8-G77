@@ -4,6 +4,11 @@ const Orders = require('./orders.models')
 const Books = require('./books.models')
 const Categories = require('./categories.models')
 const Tags = require('./tags.models')
+const BooksCategories = require('./booksCategories.models')
+const BookTags = require('./bookTags.model')
+const ItemsCarts = require('../models/itemsCart.models')
+const PaymentMethods = require('../models/paymentMethods.models')
+const DetailOrders = require('../models/detailOrders.model')
 
 const initModels = () => {
     Users.hasOne(Cart)
@@ -12,11 +17,28 @@ const initModels = () => {
     Orders.belongsTo(Users)
     Users.hasMany(Orders)
 
-    Books.belongsToMany(Categories,{through: 'book_categories'})
-    Categories.belongsToMany(Books, {through: 'book_categories'})
+    ItemsCarts.belongsTo(Cart)
+    Cart.hasMany(ItemsCarts) 
 
-    Books.belongsToMany(Tags, {through: 'book_tags'})
-    Tags.belongsToMany(Books, {through: 'book_tags'})
+   /*  Orders.hasOne(PaymentMethods)
+    PaymentMethods.belongsTo(Orders) */
+
+    DetailOrders.belongsTo(Orders)
+    Orders.hasMany(DetailOrders)
+
+    Books.belongsToMany(Categories, { through: BooksCategories })
+    Categories.belongsToMany(Books, { through: BooksCategories })
+    BooksCategories.belongsTo(Books)
+    Books.hasMany(BooksCategories)
+    BooksCategories.belongsTo(Categories)
+    Categories.hasMany(BooksCategories)
+
+    Books.belongsToMany(Tags, { through: BookTags })
+    Tags.belongsToMany(Books, { through: BookTags })
+    BookTags.belongsTo(Books)
+    Books.hasMany(BookTags)
+    BookTags.belongsTo(Tags)
+    Tags.hasMany(BookTags)
 }
 
 module.exports = initModels
