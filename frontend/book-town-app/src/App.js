@@ -3,7 +3,6 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
-import Account from "./pages/Account";
 import NavBar from "./components/Navbar/NavBar";
 import Cart from "./pages/Cart";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
@@ -20,7 +19,6 @@ function App() {
 
         <Route element={<ProtectedRoutes />}>
           <Route path="/cart" element={<Cart />} />
-          <Route path="/account" element={<Account />} />
         </Route>
       </Routes>
     </>
