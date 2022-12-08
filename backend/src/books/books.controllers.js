@@ -1,11 +1,23 @@
 const uuid = require('uuid')
 const Books = require('../models/books.models')
 const BooksCategories = require('../models/categories.models')
+const Categories = require('../models/categories.models')
 const Tags = require('../models/tags.models')
 const BookTags = require('../models/bookTags.model')
 
 const getAllBooks = async () => {
-    const data = await Books.findAll()
+    const data = await Books.findAll({
+        include: [
+            {
+                model: BooksCategories,
+                include: [
+                    {
+                        model: Categories
+                    }
+                ]
+            }
+        ]
+    })
     return data
 }
 
@@ -13,7 +25,17 @@ const getBooksById = async (id) => {
     const data = await Books.findOne({
         where: {
             id: id
-        }
+        },
+        include: [
+            {
+                model: BooksCategories,
+                include: [
+                    {
+                        model: Categories
+                    }
+                ]
+            }
+        ]
     })
     return data
 }
@@ -31,20 +53,7 @@ const createBook = async (data) => {
         cover: data.cover,
         thumbnail: data.thumbnail,
         price: data.price,
-        tags: data.tags/* data.tags.map(tag=>{
-            return( {
-                name: tag.name,
-                BookTags: {
-                    selfGranted: false
-                }
-            })
-        }) */
-        /* addTag(data.tags.map(tag =>{
-            return{
-                bookId: data.id,
-                categoryId: 
-            }
-        })) */
+        tags: data.tags
     })
     const tagsId = response.tags.map(tag => {
         return {
