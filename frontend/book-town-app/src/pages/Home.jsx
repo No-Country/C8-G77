@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import CarouselHome from "../components/carousel/CarouselHome";
-import Dropdown from "../components/navbar/Dropdown";
+import Dropdown from "../components/Navbar/Dropdown";
 
 function Home() {
   const [genres, setGenres] = useState(null);
