@@ -7,7 +7,7 @@ const BookItem = ({book}) => {
     const navigate = useNavigate()
 
     const handleClick = ()=>{
-        navigate(`/detail/${book.id}`)
+        navigate(`/detail/${book.book.id}`)
     }
     return (
         <div className=" border border-white rounded overflow-hidden h-[230px] md:h-[260px] lg:h-[290px] 2xl:h-[300px] shadow-md shadow-black " onClick={handleClick}>
@@ -15,8 +15,8 @@ const BookItem = ({book}) => {
                 {/* <h1>{item.categories[0].name}</h1> */}
                 <img
                     className="w-full h-full"
-                    src={book.cover}
-                    alt={book.thumbnail}
+                    src={book.book.cover}
+                    alt={book.book.thumbnail}
                 />
                 <button>Add to cart</button>
             </div>

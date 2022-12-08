@@ -29,19 +29,13 @@ function Home() {
         </button>
       </div>
 
-      <div className="py-16">
-        <h1></h1>
-        <CarouselHome genre={"Ciencia"} books={books} />
-      </div>
-      <div className="py-16">
-        <CarouselHome genre={"Cómics"} books={books} />
-      </div>
-      <div className="py-16">
-        <CarouselHome genre={"Electrónica"} books={books} />
-      </div>
-      <div className="py-16">
-        <CarouselHome genre={"Redes y Sys Admin"} books={books} />
-      </div>
+       {
+        genres?.map(genre=>(
+          <div className="py-16">
+          <CarouselHome genre={genre.id} />
+          </div>
+        ))
+       }
     </div>
   );
 }
