@@ -1,6 +1,5 @@
 const uuid = require('uuid')
 const Books = require('../models/books.models')
-const BooksCategories = require('../models/categories.models')
 const Categories = require('../models/categories.models')
 const Tags = require('../models/tags.models')
 const BookTags = require('../models/bookTags.model')
@@ -9,14 +8,15 @@ const getAllBooks = async () => {
     const data = await Books.findAll({
         include: [
             {
-                model: BooksCategories,
-                include: [
-                    {
-                        model: Categories
-                    }
-                ]
+                model: Categories,
+                attributes: {
+                    exclude: ['createdAt', 'updatedAt']
+                }
             }
-        ]
+        ],
+        attributes:{
+            exclude: ['createdAt', 'updatedAt']
+        }
     })
     return data
 }
@@ -28,12 +28,10 @@ const getBooksById = async (id) => {
         },
         include: [
             {
-                model: BooksCategories,
-                include: [
-                    {
-                        model: Categories
-                    }
-                ]
+                model: Categories,
+                attributes: {
+                    exclude: ['createdAt', 'updatedAt']
+                }
             }
         ]
     })
