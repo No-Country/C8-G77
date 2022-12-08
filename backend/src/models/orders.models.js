@@ -1,11 +1,13 @@
 const { DataTypes } = require('sequelize')
 const db = require('../utils/database')
 const Users = require('./users.models')
+const PaymenthMethods = require('./paymentMethods.models')
 
 const Orders = db.define('orders', {
     id: {
         type: DataTypes.UUID,
         primaryKey: true,
+        unique: true,
         allowNull: false
     },
     userId: {
@@ -17,18 +19,14 @@ const Orders = db.define('orders', {
             model: Users
         }
     },
-    bookName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        field: 'book_name'
-    },
-    value: {
-        type: DataTypes.DECIMAL,
-        allowNull: false
-    },
-    amount: {
+    paymenthMethodId: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        field: 'paymenth_method_id',
+        references: {
+            key: 'id',
+            model: PaymenthMethods
+        }
     },
     total: {
         type: DataTypes.DECIMAL,

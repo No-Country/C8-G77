@@ -1,26 +1,22 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import axios from "axios";
 import "./CarouselDetail.css";
+import BookItem from "./BookItem";
+import { useEffect } from "react";
+import axios from 'axios'
 
-function CarouselHome({ genre }) {
-  const [books, setBooks] = useState(null);
-
-  const getAllBooks = () => {
-    const url = `https://www.etnassoft.com/api/v1/get/?category=${genre}`;
-    axios
-      .get(url)
-      .then((res) => setBooks(res.data))
-      .catch((err) => console.log(err));
-  };
+function CarouselHome({ genre, books }) {
+  const [booksGenre, setbooksGenre] = useState(null)
 
   useEffect(() => {
-    getAllBooks();
-  }, []);
-  console.log(books);
+    const url = `https://pseudo-booktown.onrender.com/api/v1/categories/${genre}/books`;
+    axios.get(url)
+      .then((res) => setbooksGenre(res.data))
+      .catch((err) => console.log(err));
+  }, [])
+  console.log(booksGenre)
 
   const settings = {
     dots: true,
@@ -61,20 +57,11 @@ function CarouselHome({ genre }) {
   };
 
   return (
-    <div className="cardContainer mx-auto w-[280px] sm:w-[565px] md:w-[680px] lg:w-[1040px] xl:w-[1050px] 2xl:w-[970px]">
+    <div className="cardContainer mx-auto w-[280px] sm:w-[565px] md:w-[680px] lg:w-[1040px] xl:w-[1050px] 2xl:w-[970px] xl::max-w-[1366px]">
       <Slider {...settings}>
         {React.Children.toArray(
-          books?.map((item) => (
-            <div className=" border border-white rounded overflow-hidden h-[230px] md:h-[260px] lg:h-[290px] 2xl:h-[300px] shadow-md shadow-black ">
-              <div className="h-full">
-                <h1>{item.categories[0].name}</h1>
-                <img
-                  className="w-full h-full"
-                  src={item.cover}
-                  alt={item.thumbnail}
-                />
-              </div>
-            </div>
+          booksGenre?.map((item) => (
+            <BookItem key={item.book.id} book={item} />
           ))
         )}
       </Slider>

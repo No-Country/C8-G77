@@ -1,6 +1,7 @@
 const { DataTypes } = require('sequelize')
 const db = require('../utils/database')
 const Users = require('./users.models')
+const Books = require('../models/books.models')
 
 const Cart = db.define('cart', {
     id: {
@@ -18,22 +19,12 @@ const Cart = db.define('cart', {
             model: Users
         }
     },
-    bookName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        field: 'book_name'
-    },
-    value: {
-        type: DataTypes.DECIMAL,
-        allowNull: false
-    },
     amount: {
         type: DataTypes.INTEGER,
         allowNull: false
     },
     total: {
-        type: DataTypes.DECIMAL,
-        allowNull: false
+        type: DataTypes.DECIMAL
     }
 })
 

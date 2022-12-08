@@ -1,4 +1,5 @@
 const Categories = require('../models/categories.models')
+const Users = require('../models/users.models')
 
 const getAllCategories = async () => {
     const data = await Categories.findAll()

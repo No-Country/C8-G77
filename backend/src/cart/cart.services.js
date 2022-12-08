@@ -9,7 +9,7 @@ const getCart = (req, res) => {
 
 const postCart = (req, res) => {
     const userId = req.user.id
-    const { bookName, value, amount } = req.body
+    const { amount } = req.body
     const total = value * amount
 
     if (bookName && value && amount) {

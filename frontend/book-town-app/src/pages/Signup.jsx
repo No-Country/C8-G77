@@ -21,7 +21,7 @@ function Signup() {
           </div>
         </div>
 
-        <div className="w-full sm:flex sm:justify-center sm:py-12 sm:bg-gradient-to-r from-blue-800 via-cyan-500 to-violet-700 lg:w-2/5 lg:px-4 xl:h-screen xl:flex xl:justify-center xl:items-center">
+        <div className="w-full sm:flex sm:justify-center sm:bg-gradient-to-r from-blue-800 via-cyan-500 to-violet-700 lg:w-2/5 p-0">
           <FormSignup />
         </div>
       </div>
