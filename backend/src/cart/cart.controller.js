@@ -11,11 +11,7 @@ const getAllProducts = async (id) => {
 
 const createProduct = async (data) => {
     const response = await Cart.create({
-        userId: data.userId,
-        bookName: data.bookName,
-        value: data.value,
         amount: data.amount,
-        total: data.total
     })
     return response
 }
@@ -24,15 +20,14 @@ const deleteProduct = async (id, userId) => {
     const data = await Cart.destroy({
         where: {
             id: id,
-            userId: userId
         }
     })
     return data
 }
 
-const deleteAllProducts = async(userId)=>{
+const deleteAllProducts = async (userId) => {
     const data = await Cart.destroy({
-        where:{
+        where: {
             userId: userId,
         }
     })
